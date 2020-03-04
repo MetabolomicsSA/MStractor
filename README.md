@@ -18,6 +18,7 @@ All the instructions are included in the package documentation
 ## Case study 
 A case study to test the script is available. 
 A LCMS data set is included in the package, please see vignettes and package documentation for details
+Raw data are available for download in exdata.zip. Extract the files locally  in the inst/  directory.
 ## Developers 
 The workflow was developed by the Metabolomics South Australia team at The Australian Wine Research Institute. 
 Funding has been provided by Bioplatforms Australia (BPA) under the National Collaborative Research Infrastructure Strategy (NCRIS) 
