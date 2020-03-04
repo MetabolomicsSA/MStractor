@@ -1,0 +1,12 @@
+test_that("printEICsXset works", {
+        ChromParam()
+        MassSpecParam()
+        PeakPickingParam()
+        ClassType<-c('Mix', 'Treatment1')
+        DefineClassAttributes(ClassType)
+        data(xSetRef)
+        dir.create("./QC")
+        printEICsXset(xSetRef,'raw')
+        filenum<-length(list.files('./QC/EICs_raw'))
+        expect_equal(filenum, 465)
+})

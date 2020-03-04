@@ -1,0 +1,10 @@
+test_that("refTic works", {
+  ChromParam()
+  MassSpecParam()
+  PeakPickingParam()
+  data(testX)
+  expRefData(testDataSet)
+  dir.create('./QC')
+  refTic(x_refs)
+  expect_true(file.exists('./QC/Ref_TIC.png'))
+})

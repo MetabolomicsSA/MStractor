@@ -1,0 +1,12 @@
+test_that("printEICs works", {
+  ChromParam()
+  MassSpecParam()
+  PeakPickingParam()
+  ClassType<-c('Mix', 'Treatment1')
+  DefineClassAttributes(ClassType)
+  data(xdata)
+  dir.create("./QC")
+  printEICs(xdata,'raw')
+  filenum<-length(list.files('./QC/EICs_raw'))
+  expect_equal(filenum, 366)
+})
