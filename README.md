@@ -13,7 +13,7 @@ MStractor shows some additional features such as:
 1. Parameterization based on user provided inputs obtained from instrument specifications and reference measurements. 
 2. Graphical tools for real-time quality monitoring and optimization of the feature extraction process 
 ## Getting started 
-The package is availabe to download as binary package (zip) and tar.gz under the 'releases' section. 
+The package is availabe to download as tar.gz under the 'releases' section. 
 All the instructions are included in the package documentation
 ## Case study 
 A case study to test the script is available. 
