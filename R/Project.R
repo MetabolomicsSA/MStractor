@@ -29,12 +29,11 @@ Project <- function() {
     ws <- list(pathToProject, qcReps)
     # Set the projects working directory
     if (is.na('pathToProject')) {
+        return(cat("Working directory not found"))
+    }else{
         setwd(pathToProject)
         dir.create("./QC")
         cat("Working directory set to:\n", getwd())
         return(ws)
-    }else{
-    return(cat("Working directory not found"))
     }
-
 }

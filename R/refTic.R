@@ -23,4 +23,5 @@ refTic <- function(x) {
         adjustedRtime = FALSE),
         main = "TIC Raw file", peakType = "none")
     assign("pl", pl, envir)
+    dev.off()
     }

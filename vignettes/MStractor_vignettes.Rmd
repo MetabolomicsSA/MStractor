@@ -448,7 +448,7 @@ signals is performed.
 RTalign_xset(xset,'loess')
 xsAlign <- group(xsAlign, method= "nearest", mzVsRTbalance= 10, mzCheck= 
         mzErrAbs,rtCheck= rtDelta, kNN=10)
-xsFilled <- fillPeaks(xsAlign, method="chrom", expand.mz=0.5 )s
+xsFilled <- fillPeaks(xsAlign, method="chrom", expand.mz=0.5 )
 ```
 
 ### 6.2 _Print aligned EICs and TICs_
