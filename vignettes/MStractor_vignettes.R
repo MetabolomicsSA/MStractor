@@ -32,7 +32,7 @@ MassSpecParam()
 
 ## ----eval=TRUE----------------------------------------------------------------
 
-ClassType<-c('Mix','Treatment1')## use only with the provided dataset
+ClassType<-c('Mix','Treatment1')## don't run if using the the provided dataset
 DefineClassAttributes(ClassType)
 
 ## ----eval=TRUE----------------------------------------------------------------
@@ -70,7 +70,9 @@ get100(x_refs)
 
 ## ----eval=TRUE, results='hide', message=FALSE, warning=FALSE------------------
 ClassType<-c('Mix', 'Treatment1')
-DefineClassAttributes(ClassType)
+SampleGroup<-c("Mix",        "Mix",        "Mix",        "Treatment1", "Treatment1", "Treatment1")
+symbol<-c(1 ,1, 1, 2,2, 2)
+ClassCol<- c("#FF0000FF", "#FF0000FF", "#FF0000FF", "#00FFFFFF", "#00FFFFFF", "#00FFFFFF")
 path<-system.file("extdata",package = "MStractor")
 files <- dir(path, pattern = ".mzXML", full.names = TRUE)
 pd <- data.frame(sample_name = sub(basename(files), pattern = filetype,
@@ -122,7 +124,7 @@ sampnames(xset)<-spn
 #  RTalign_xset(xset,'loess')
 #  xsAlign <- group(xsAlign, method= "nearest", mzVsRTbalance= 10, mzCheck=
 #          mzErrAbs,rtCheck= rtDelta, kNN=10)
-#  xsFilled <- fillPeaks(xsAlign, method="chrom", expand.mz=0.5 )s
+#  xsFilled <- fillPeaks(xsAlign, method="chrom", expand.mz=0.5)
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  getTICs(xcmsSet= xsAlign, pngName= "./QC/TICs_Aligned.png", rt= "corrected")
@@ -134,9 +136,10 @@ autoCamera(xset)
 
 ## ----eval=TRUE, warning=FALSE-------------------------------------------------
 FilterDM(PksAn, xset)
-CollectBP_EICs(BasePks,'filled')##after this step manual curation is necessary 
-#the second argument of the funtion is either 'filled' (branch a)
-#or "corrected' (branch b)
+
+#the second argument of the function below is either 'filled' (branch a) or "corrected' (branch b)
+CollectBP_EICs(BasePks,'filled') 
+#after this step manual curation is necessary 
 BasePks_Curated(BasePks)
 MedianNormalize(BasePksCur, xset)
 
