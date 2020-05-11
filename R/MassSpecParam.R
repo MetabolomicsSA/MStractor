@@ -26,7 +26,7 @@ MassSpecParam <- function() {
         default = 3, gui = .GUI)$res
     eicssmax <- dlgInput(message = "Max number of chrom. peaks expected
         for a single EIC [EICsMax]", default = 30, gui = .GUI)$res
-    sensmin <- dlgInput(message = "sensitivity [sens]", default = 0.2,
+    sensmin <- dlgInput(message = "sensitivity [sens]", default = 0.7,
         gui = .GUI)$res
     filetype <- dlgInput(message = "define file type [filetype]",
         default = ".mzXML",gui = .GUI)$res
