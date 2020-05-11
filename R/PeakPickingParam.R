@@ -47,7 +47,7 @@ PeakPickingParam <- function() {
     }
     assign("mzErrPpmMax", mzErrPpmMax, envir)
     IntT <- dlgInput(message = "Enter integration threshold [intThresh]",
-        default = 5000, gui = .GUI)$res
+        default = 2000, gui = .GUI)$res
     assign("intThresh", as.numeric(IntT), envir)
     SNT <- dlgInput(message = "Enter signal to noise threshold [snThresh]",
         default = "none", gui = .GUI)$res
