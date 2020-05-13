@@ -14,11 +14,17 @@ MStractor shows some additional features such as:
 2. Graphical tools for real-time quality monitoring and optimization of the feature extraction process 
 ## Getting started 
 The package is availabe to download as tar.gz under the 'releases' section. 
-All the instructions are included in the package documentation
+in order to download he dependencies make sure the package 'remotes' is installed and run the  following
+
+
 ## Case study 
 A case study to test the script is available. 
 A LCMS data set is included in the package, please see vignettes and package documentation for details
-Raw data are available for download in exdata.zip. Extract the files locally  in the inst/  directory.
+
+# setRepositories(ind=1:2)
+
+# remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
+
 ## Developers 
 The workflow was developed by the Metabolomics South Australia team at The Australian Wine Research Institute. 
 Funding has been provided by Bioplatforms Australia (BPA) under the National Collaborative Research Infrastructure Strategy (NCRIS) 
