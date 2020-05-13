@@ -21,9 +21,13 @@ in order to download he dependencies make sure the package 'remotes' is installe
 A case study to test the script is available. 
 A LCMS data set is included in the package, please see vignettes and package documentation for details
 
-### setRepositories(ind=1:2)
+To install the package from the tar.gz file available to download under 'releases', please run the following 
 
-### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
+#### setRepositories(ind=1:2)
+
+#### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
+
+
 
 ## Developers 
 The workflow was developed by the Metabolomics South Australia team at The Australian Wine Research Institute. 
