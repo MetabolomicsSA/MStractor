@@ -19,13 +19,17 @@ in order to download he dependencies make sure the package 'remotes' is installe
 
 ## Case study 
 A case study to test the script is available. 
-A LCMS data set is included in the package, please see vignettes and package documentation for details
+A LCMS data set is included in the package, please see vignettes and package documentation for details.
+
+To install the pacakge from the GitHub repository, install 'devtools' pacakge and run the following:
+
+##### install_github("MetabolomicsSA/MStractor")
 
 To install the package from the tar.gz file available to download under 'releases', please run the following 
 
-#### setRepositories(ind=1:2)
+##### setRepositories(ind=1:2)
 
-#### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
+##### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
 
 
 
