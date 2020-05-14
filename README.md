@@ -16,8 +16,6 @@ MStractor shows some additional features such as:
 The package is availabe to download as tar.gz under the 'releases' section. 
 in order to download he dependencies make sure the package 'remotes' is installed and run the  following
 
-To install the package from the tar.gz file available to download under 'releases', please run the following 
-
 ##### setRepositories(ind=1:2)
 
 ##### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
