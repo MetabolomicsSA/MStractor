@@ -88,4 +88,4 @@ importFrom(CAMERA,groupFWHM)
 importFrom(CAMERA,findIsotopes)
 importFrom(CAMERA,groupCorr)
 importFrom(CAMERA,getPeaklist)
-
+import(graphics)
