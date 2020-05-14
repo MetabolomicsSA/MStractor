@@ -28,6 +28,7 @@ DefineClassAttributes <- function(x) {
     }
     } else
         {
+        classSize<-numeric()
         for (i in seq_along(x)) {
         detfls <-3
         classSize <- c(classSize, detfls)
