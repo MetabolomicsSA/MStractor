@@ -1,5 +1,5 @@
 # MStractor 
-Please note that this version of the script has been tested  using Bioconductor version ####3.8.2 and R version ####3.6.3 
+Please note that this version of the script has been tested  using Bioconductor version ####3.8.1 and R version ####3.6.2 
 
 MStractor is an R workflow package for non-targeted processing of LC-MS data 
 The MStractor workflow performs the following: 
@@ -16,17 +16,16 @@ MStractor shows some additional features such as:
 The package is availabe to download as tar.gz under the 'releases' section. 
 in order to download he dependencies make sure the package 'remotes' is installed and run the  following
 
-
-## Case study 
-A case study to test the script is available. 
-A LCMS data set is included in the package, please see vignettes and package documentation for details.
-
 To install the package from the tar.gz file available to download under 'releases', please run the following 
 
 ##### setRepositories(ind=1:2)
 
 ##### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
 
+
+## Case study 
+A case study to test the script is available. 
+A LCMS data set is included in the package, please see vignettes and package documentation for details.
 
 
 ## Developers 
