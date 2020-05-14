@@ -23,6 +23,7 @@ Imports:
  fda,
  gtools,
  grDevices,
+ multtest,
  parallel,
  htmltools,
  MSnbase,
