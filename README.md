@@ -13,8 +13,16 @@ MStractor shows some additional features such as:
 1. Parameterization based on user provided inputs obtained from instrument specifications and reference measurements. 
 2. Graphical tools for real-time quality monitoring and optimization of the feature extraction process 
 ## Getting started 
-The package is availabe to download as tar.gz under the 'releases' section. 
-in order to download he dependencies make sure the package 'remotes' is installed and run the  following
+
+toinstall the package from GitHub, make sure the package 'remotes' is installed and run the  following
+
+#### remotes::install_github("MetabolomicsSA/MStractor")
+
+if warnings related to dependencies are preventing installation, type the following and repeat the commnad
+
+#### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
+
+Alternatively, the package can be installed from the tar.gz file available under "releases"
 
 ##### setRepositories(ind=1:2)
 
