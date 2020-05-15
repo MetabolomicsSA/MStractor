@@ -16,6 +16,8 @@ MStractor shows some additional features such as:
 
 toinstall the package from GitHub, make sure the package 'remotes' is installed and run the  following
 
+#### library(remotes)
+
 #### remotes::install_github("MetabolomicsSA/MStractor")
 
 if warnings related to dependencies are preventing installation, type the following and repeat the commnad
