@@ -35,7 +35,8 @@ Imports:
  svDialogs (>= 1.0.0),
  utils,
  tidyr,
- tools
+ tool,
+ multtest
 Suggests:
     knitr,
     rmarkdown,
