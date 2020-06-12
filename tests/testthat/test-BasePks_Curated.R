@@ -16,7 +16,7 @@ test_that("Base Pks_Curated works", {
   autoCamera(xsFilled)
   FilterDM(PksAn, xSetRef)
   runtimeStart <- Sys.time()
-  CollectBP_EICs(BasePks)
+  CollectBP_EICs(BasePks,'corrected')
   BasePks_Curated(BasePks)
   filenum<-length(list.files('./EICs_BasePeaks_Curated'))
   expect_equal(filenum, 73)
