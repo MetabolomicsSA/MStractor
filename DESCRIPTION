@@ -13,10 +13,10 @@ Encoding: UTF-8
 LazyData: FALSE
 Depends:
  R (>= 3.6.0),
- graphics,
  xcms (>= 3.8.1)
 Imports:
  berryFunctions,
+ graphics,
  BiocManager,
  BiocParallel,
  CAMERA,
@@ -36,12 +36,12 @@ Imports:
  utils,
  tidyr,
  tools,
- multtest
+ vctrs
 Suggests:
     knitr,
     rmarkdown,
     testthat (>= 2.1.0)
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr
 BugReports: https://github.com/MetabolomicsSA/MStractor/issues
 biocViews: Workflow, BasicWorkflow
