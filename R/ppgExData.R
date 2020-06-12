@@ -39,7 +39,7 @@ ppgExData <- function(x) {
         ppm = mzErrPpmMin,mzCenterFun = "wMean")
     xdata <- findChromPeaks(x, param = cwp)
     classSize<-c(3,3,3)
-    minfrac <- (min(classSize))/length(sampleNames(raw_data))
+    minfrac <- (min(classSize))/length(sampleNames(x))
     assign("minfrac", minfrac, envir)
     pdp <- PeakDensityParam(sampleGroups = xdata$sample_group, minSamples = 2,
         maxFeatures = MFeat, bw = defbw, minFraction = 0.3, binSize = Binsize)

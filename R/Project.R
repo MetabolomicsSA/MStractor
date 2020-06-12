@@ -13,7 +13,7 @@
 #' @return returns a list containing the working directory and reference file
 #'     paths.
 #' @seealso \code{\link[base]{getwd}}
-#' @examples {Project()
+#' @examples \dontrun{Project()
 #' }
 Project <- function() {
     ne <- 1

@@ -2,7 +2,7 @@
 #'
 #' @docType data
 #'
-#' @usage PksAnDF
+#' @usage data(PksAnDF)
 #'
 #' @format An object of class data.frame
 #'

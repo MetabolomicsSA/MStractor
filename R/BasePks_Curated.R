@@ -24,7 +24,7 @@
 #'     autoCamera(xsFilled)
 #'     FilterDM(PksAn, xSetRef)
 #'     runtimeStart <- Sys.time()
-#'     CollectBP_EICs(BasePks)
+#'     CollectBP_EICs(BasePks,'corrected')
 #'     BasePks_Curated(BasePks)
 #'     }
 BasePks_Curated <- function(x) {

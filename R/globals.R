@@ -11,5 +11,4 @@ utils::globalVariables(c("BasePks", "BasePksCur",
     "xset", "minfrac", "dbw", "BSize", "MF", "xdata", "Sigma", "defbw",
     "Binsize","integ", "Defbw", "BinSize", "Intval", "Perfwhm",
     "corrthresh", "maxIso","ppmerror", "pvalue", "corexpth", "runtimeEnd",
-    "runtimeStart", "runtime",'rawDataSet','xdata',
-    "xSetRef"))
+    "runtimeStart", "runtime",'rawDataSet','xdata',"xSetRef"))

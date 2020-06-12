@@ -5,9 +5,6 @@
 #' @export
 #' @return Na
 #' @seealso \code{\link[xcms]{xcmsSet-class}}
-#' @examples {data(xdata)
-#'     xsetConvert(xdata)
-#'     }
 xsetConvert <- function(x) {
     ne <- 1
     envir = as.environment(ne)

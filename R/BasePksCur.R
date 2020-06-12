@@ -2,7 +2,7 @@
 #'
 #' @docType data
 #'
-#' @usage BasePksCur
+#' @usage data(BasePksCur)
 #'
 #' @format An object of class data.frame
 #'

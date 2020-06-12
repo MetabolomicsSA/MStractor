@@ -5,11 +5,6 @@
 #' @param rtcor defines whether the rt correction was performed
 #' @export
 #' @return Na
-#' @examples {ChromParam()
-#'     MassSpecParam()
-#'     PeakPickingParam()
-#'     data(testX)
-#'     expRefData(testDataSet)}
 getTIC <- function(file, rtcor = NULL) {
     object <- xcmsRaw(file)
     cbind(if (is.null(rtcor))
