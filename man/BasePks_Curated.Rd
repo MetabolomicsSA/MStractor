@@ -39,7 +39,7 @@ BasePks_Curated() generates an updated data matrix (BasePksCur)
     autoCamera(xsFilled)
     FilterDM(PksAn, xSetRef)
     runtimeStart <- Sys.time()
-    CollectBP_EICs(BasePks)
+    CollectBP_EICs(BasePks,'corrected')
     BasePks_Curated(BasePks)
     }
 }

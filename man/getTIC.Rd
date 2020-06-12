@@ -18,10 +18,3 @@ Na
 \description{
 function to get a singleTIc
 }
-\examples{
-{ChromParam()
-    MassSpecParam()
-    PeakPickingParam()
-    data(testX)
-    expRefData(testDataSet)}
-}

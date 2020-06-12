@@ -4,9 +4,11 @@
 \name{BasePksCur}
 \alias{BasePksCur}
 \title{A data frame showing the output of the workflowafter the curation step}
-\format{An object of class data.frame}
+\format{
+An object of class data.frame
+}
 \usage{
-BasePksCur
+data(BasePksCur)
 }
 \description{
 A data frame showing the output of the workflowafter the curation step

@@ -4,14 +4,16 @@
 \name{rawDataSet}
 \alias{rawDataSet}
 \title{HRAM LCMS metabolomics experiment}
-\format{An object of class OnDiskMSnExp}
+\format{
+An object of class OnDiskMSnExp
+}
 \usage{
-rawDataSet
+data(rawDataSet)
 }
 \description{
 A dataset containing high res LCMS raw data from a wine metabolomics
 experiment.
-Data are arranged into 3 classes,Treatment 1, Treatment 2 and Mix.
+Data are arranged into 2 classes,Treatment 1 and Mix.
 Each class has 3 biological replicates
 }
 \keyword{datasets}

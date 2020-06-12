@@ -16,11 +16,6 @@ Na
 XCMSnExp data are converted to xcmsset using the function
     available in the xcms package.
 }
-\examples{
-{data(xdata)
-    xsetConvert(xdata)
-    }
-}
 \seealso{
 \code{\link[xcms]{xcmsSet-class}}
 }

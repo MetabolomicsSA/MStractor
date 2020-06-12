@@ -25,7 +25,7 @@ peculiar of 'branch a', the function collates features information
     (either the integrated peak area or maximum intensity).
     The arguments of the function are the filled XCMSnEXP object and the type
     of instrumental response desired (either into or maxo).
-    The data matrix is written into a.cdv file in the QC folder.
+    The data matrix is written into a tsv file in the QC folder.
 }
 \examples{
 {data(xdata)

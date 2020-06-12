@@ -25,7 +25,7 @@ The function does not require arguments. Its execution opens a GUI
     of the workflow are stored.
 }
 \examples{
-{Project()
+\dontrun{Project()
 }
 }
 \seealso{
