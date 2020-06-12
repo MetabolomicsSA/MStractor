@@ -17,17 +17,14 @@ MStractor shows some additional features such as:
 to install the package from GitHub, make sure the package 'remotes' is installed and run the  following
 
 #### library(remotes)
-
+#### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 #### remotes::install_github("MetabolomicsSA/MStractor")
 
-if warnings related to dependencies are preventing installation, type the following and repeat the commnad
-
-#### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 
 Alternatively, the package can be installed from the tar.gz file available under "releases"
 
 ##### setRepositories(ind=1:2)
-
+### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 ##### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
 
 
