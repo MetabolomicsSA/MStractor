@@ -100,7 +100,8 @@ as displayed in **Figure 2**.
 To install the package from GitHub, make sure the package 'remotes' is installed and run the following
 
 
-```{r install_pacakge, eval=FALSE}
+
+```r
 library(remotes)
 
 Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
@@ -119,11 +120,10 @@ setRepositories(ind=1:2)
 
 remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", 
  '               dependencies=NA)
-
 ```
-```{r load_library, message=FALSE, warning= FALSE}
-library(MStractor)
 
+```r
+library(MStractor)
 ```
 ## 1. _Acquisition Parameters_
 
@@ -141,15 +141,16 @@ the data processing outcome.
 
 ### 1.1 _Define Working Directory and Reference Files_
 
-```{r define_project, eval=FALSE}
+
+```r
 Project()
 #If using the dataset provided within the package, set the working directory only and skip the rest 
 ```
 use instead:
-```{r load_package_dataset, message=FALSE}
+
+```r
 path<-system.file("extdata",package = "MStractor")
 files <- dir(path, pattern = ".mzXML", full.names = TRUE)
-
 ```
 
 The function doesn’t require arguments.
@@ -187,10 +188,59 @@ For more details about more details about the parameters consult the xcms
 manual:
 https://www.bioconductor.org/packages/release/bioc/manuals/xcms/man/xcms.pdf )
 
-```{r eval= TRUE}
-ChromParam()
 
+```r
+ChromParam()
+```
+
+```
+## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] "max"
+## 
+## [[3]]
+## [1] 10
+## 
+## [[4]]
+## [1] 90
+## 
+## [[5]]
+## [1] 32
+```
+
+```r
 MassSpecParam()
+```
+
+```
+## [[1]]
+## [1] "negative"
+## 
+## [[2]]
+## [1] 100
+## 
+## [[3]]
+## [1] 1650
+## 
+## [[4]]
+## [1] 0.01
+## 
+## [[5]]
+## [1] 3
+## 
+## [[6]]
+## [1] 30
+## 
+## [[7]]
+## [1] 0.7
+## 
+## [[8]]
+## [1] ".mzXML"
+```
+
+```r
 # leave default values if using the package dataset
 ```
 
@@ -202,11 +252,10 @@ Values are entered using GUIs as displayed in Figure 4.
 
 ### 1.3 _Load the Dataset_
 
-```{r eval=FALSE}
 
+```r
 LoadData()
 #Skip this step if using the dataset provided within the package 
-
 ```
 The function returns a complete list of the loaded files. It also starts
 recording the time necessary for data processing and creates the object 
@@ -215,10 +264,23 @@ recording the time necessary for data processing and creates the object
 
 ### 1.4 _Define Class Identifiers_
 
-```{r eval=TRUE}
+
+```r
 ClassType<-c('Mix','Treatment1')
 ## don't run if using the the provided dataset
 DefineClassAttributes(ClassType)
+```
+
+```
+## [[1]]
+## [1] "Mix"        "Mix"        "Mix"        "Treatment1" "Treatment1"
+## [6] "Treatment1"
+## 
+## [[2]]
+## [1] "#FF0000" "#FF0000" "#FF0000" "#00FFFF" "#00FFFF" "#00FFFF"
+## 
+## [[3]]
+## [1] 1 1 1 2 2 2
 ```
 
 The argument of the function is the object ‘ClassType’. The function defines
@@ -227,10 +289,36 @@ which  are then used to produce graphical outputs.
 
 ### 1.5 _Define Peak Picking Parameters_
 
-```{r eval=TRUE}
+
+```r
 #leave default values if using the package dataset
 PeakPickingParam()
+```
 
+```
+## [[1]]
+## [1] 10
+## 
+## [[2]]
+## [1] 20
+## 
+## [[3]]
+## [1] 3.030303
+## 
+## [[4]]
+## [1] 50
+## 
+## [[5]]
+## [1] 26.51515
+## 
+## [[6]]
+## [1] 0.002
+## 
+## [[7]]
+## [1] FALSE
+## 
+## [[8]]
+## [1] 1
 ```
 
 The function uses GUIs to define xcms peak picking parameters using
@@ -250,12 +338,13 @@ release/bioc/manuals/xcms/man/xcms.pdf
 This step allows testing the suitability of the input parameters on the 
 reference files selected in the first step.
 
-```{r eval=FALSE}
-exploreRefs() 
 
+```r
+exploreRefs() 
 ```
 Note: In case the package dataset is used, the following needs to be run
-```{r eval=TRUE, message=FALSE, results='hide',warning=FALSE}
+
+```r
 dir.create("./QC")
 SampleGroup<-c("Mix", "Mix")
 symbol<-c(1,1)
@@ -278,8 +367,14 @@ the xcms function readMSData and, lastly, peak picking and grouping
 is carried out. The output of the function is the XCMSnEXP object ‘x_refs’.
 
 
-```{r eval=TRUE, message=FALSE, warning=FALSE}
+
+```r
 refTic(x_refs)
+```
+
+```
+## null device 
+##           1
 ```
 
 The refTic function returns  a  plot of the overlaid TICs for the reference
@@ -289,7 +384,8 @@ files
 
 **Figure 5: non-aligned overlaid TICs **
 
-```{r eval=TRUE, message=FALSE, results='hide'}
+
+```r
 get100(x_refs)
 ```
 
@@ -309,13 +405,15 @@ the data preparation step.
 The function perform the same steps described for exploreRefs(),
 with the only difference that the processing is applied to the whole dataset.
 
-```{r eval=FALSE}
+
+```r
 peakPickGroup() # don't run if using the example dataset
 ```
 
 In case the example dataset fullDataSet is used, the following needs to be run
 
-```{r eval=TRUE, results='hide', message=FALSE, warning=FALSE}
+
+```r
 ClassType<-c('Mix', 'Treatment1')
 SampleGroup<-c("Mix",        "Mix",        "Mix",        "Treatment1", "Treatment1", "Treatment1")
 symbol<-c(1 ,1, 1, 2,2, 2)
@@ -328,7 +426,6 @@ pd <- data.frame(sample_name = sub(basename(files), pattern = filetype,
 raw_data <- readMSData(files =files, pdata = new("NAnnotatedDataFrame",
     pd), mode = "onDisk")
 ppgExData(raw_data) 
-
 ```
 
 It is important that the input parameters used in this step match the ones 
@@ -354,10 +451,10 @@ of the workflow.
 
 ### 4a _Print raw EICs and TICs_
 
-```{r eval=TRUE, message=FALSE, results='hide', warning=FALSE}
+
+```r
 OverlaidTICs(xdata, 'raw') #raw indicates non-retention time aligned signals
 printEICs(xdata, 'raw')
-
 ```
 
 For both branches plots of overlaid TIC (**Figure7**) chromatograms and for
@@ -377,7 +474,8 @@ is also generated and stored in the QC folder.
 After correction, features are regrouped and the filling of missing 
 signals is performed.
 
-```{r eval=TRUE, message=FALSE, results='hide', warning=FALSE}
+
+```r
 RTalign(xdata,'loess')
 
 xdata <- groupChromPeaks(xdata, param = PeakDensityParam(sampleGroups = 
@@ -385,7 +483,6 @@ xdata <- groupChromPeaks(xdata, param = PeakDensityParam(sampleGroups =
 
 xfilled <- fillChromPeaks(xdata, param =(FillChromPeaksParam(ppm = 50, 
         expandMz = 0.5)))
-
 ```
 
 ### 6a _Print aligned EICs and TICs_
@@ -394,7 +491,8 @@ Step 6 replicates the series of functions already described for stage 4,
 with the only difference that retention time aligned TICs and
 EICs are generated
 
-```{r eval=TRUE, message=FALSE, results='hide', warning=FALSE}
+
+```r
 OverlaidTICs(xdata, 'aligned')        
 printEICs(xfilled, 'filled')
 #'aligned' and 'filled' indicate retention time aligned signals
@@ -410,15 +508,24 @@ of instrumental response desired (either ‘into’ or ‘maxo’).
 After running step seven, the workflow merges again and the user has to proceed
 with step 8.
 
-```{r eval=TRUE}
+
+```r
 CreateDM(xfilled,'maxo')
 ```
 
 Following this, the xsetConvert function (already described in step 4) reverts
 the XCMSnEXP object into the xcmsSet one. This is necessary for using CAMERA in the subsequent steps.
 
-```{r eval=TRUE}
+
+```r
 xsetConvert(xfilled)
+```
+
+```
+## Note: you might want to set/adjust the 'sampclass' of the returned xcmSet object before proceeding with the analysis.
+```
+
+```r
 sampnames(xset)<-spn
 ```
 
@@ -428,18 +535,19 @@ sampnames(xset)<-spn
 The user needs to revert the object to a xcmsSet because it is required to 
 execute the following code.
 
-```{r eval=FALSE}
+
+```r
 xsetConvert(xdata)
 sampnames(xset)<-spn
 ```
 
 ### 4b _Print raw EICs and TICs_
 
-```{r eval=FALSE}
+
+```r
 getTICs(xcmsSet= xset, pngName= "./QC/TICs_raw.png", rt= "raw")
 #raw indicates non-retention time aligned signals
 printEICsXset(xset,'raw')
-
 ```
 
 
@@ -455,7 +563,8 @@ After correction, features are regrouped and the filling of missing
 signals is performed.
 
 
-```{r eval=FALSE}
+
+```r
 RTalign_xset(xset,'loess')
 xsAlign <- group(xsAlign, method= "nearest", mzVsRTbalance= 10, mzCheck= 
         mzErrAbs,rtCheck= rtDelta, kNN=10)
@@ -468,7 +577,8 @@ Step 6 replicates the series of functions already described for stage 4,
 with the only difference that retention time aligned TICs and
 EICs are generated
 
-```{r eval=FALSE}
+
+```r
 getTICs(xcmsSet= xsAlign, pngName= "./QC/TICs_Aligned.png", rt= "corrected")
 printEICsXset(xsFilled,'corrected')
 # 'corrected' indicates retention time aligned signals
@@ -494,10 +604,56 @@ Then, based on the maximum expected charge test, isotopic patterns are
 located using  and the features belonging to coeluting 
 compounds are resolved using a correlation matrix. 
 
-```{r eval=TRUE}
-xset
-autoCamera(xset)
 
+```r
+xset
+```
+
+```
+## An "xcmsSet" object with 6 samples
+## 
+## Time range: 11.7-8505 seconds (0.2-141.8 minutes)
+## Mass range: 96.9573-1565.3684 m/z
+## Peaks: 15284 (about 2547 per sample)
+## Peak Groups: 2242 
+## Sample classes: Mix, Treatment1 
+## 
+## Feature detection:
+##  o Peak picking performed on MS1.
+##  o Scan range limited to  1 - 4400 
+## Profile settings: method = bin
+##                   step = 0.1
+## 
+## Memory usage: 6.81 MB
+```
+
+```r
+autoCamera(xset)
+```
+
+```
+## Start grouping after retention time.
+## Created 649 pseudospectra.
+## Generating peak matrix!
+## Run isotope peak annotation
+##  % finished: 10  20  30  40  50  60  70  80  90  100  
+## Found isotopes: 310 
+## Start grouping after correlation.
+## Generating EIC's .. 
+## Warning: Found NA peaks in selected sample.
+## 
+## Calculating peak correlations in 649 Groups... 
+##  % finished: 10  20  30  40  50  60  70  80  90  100  
+## 
+## Calculating peak correlations across samples.
+##  % finished: 10  20  30  40  50  60  70  80  90  100  
+## 
+## Calculating isotope assignments in 649 Groups... 
+##  % finished: 10  20  30  40  50  60  70  80  90  100  
+## Calculating graph cross linking in 649 Groups... 
+##  % finished: 10  20  30  40  50  60  70  80  90  100  
+## New number of ps-groups:  1054 
+## xsAnnotate has now 1054 groups, instead of 649
 ```
 
 The function generates the PksAn datamatrix, containing the results of
@@ -511,11 +667,19 @@ The second argument ofthe function "collectBP_EICs" is either
 "filled" for workflow branch a or "corrected" for workflow 
 branch b
 
-```{r eval=TRUE, warning=FALSE}
+
+```r
 FilterDM(PksAn, xset)
 
 #the second argument of the function below is either 'filled' (branch a) or 'corrected' (branch b)
 CollectBP_EICs(BasePks,'filled') 
+```
+
+```
+## Time difference of 56.04995 mins
+```
+
+```r
 #after this step manual curation is necessary 
 BasePks_Curated(BasePks)
 MedianNormalize(BasePksCur, xset)
@@ -567,14 +731,104 @@ An sdditional step of the workflow allows calculating  descriptive statistics
 of each sample class. The output is stored in separate .tsv file
 for each class.
 
-```{r eval=TRUE}
+
+```r
 StatsByClass(ClassType, xset)
 ```
 
 ## _Session information_
 
-```{r eval=TRUE}
+
+```r
 sessionInfo()
+```
+
+```
+## R version 4.0.1 (2020-06-06)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 18363)
+## 
+## Matrix products: default
+## 
+## locale:
+## [1] LC_COLLATE=C                       LC_CTYPE=English_Australia.1252   
+## [3] LC_MONETARY=English_Australia.1252 LC_NUMERIC=C                      
+## [5] LC_TIME=English_Australia.1252    
+## 
+## attached base packages:
+## [1] stats4    parallel  stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
+## 
+## other attached packages:
+##  [1] MStractor_0.1.0     xcms_3.10.1         MSnbase_2.14.2     
+##  [4] ProtGenerics_1.20.0 S4Vectors_0.26.1    mzR_2.22.0         
+##  [7] Rcpp_1.0.4.6        BiocParallel_1.22.0 Biobase_2.48.0     
+## [10] BiocGenerics_0.34.0
+## 
+## loaded via a namespace (and not attached):
+##   [1] snow_0.4-3                  backports_1.1.7            
+##   [3] Hmisc_4.4-0                 sm_2.2-5.6                 
+##   [5] plyr_1.8.6                  igraph_1.2.5               
+##   [7] CAMERA_1.44.0               splines_4.0.1              
+##   [9] fda_5.1.4                   GenomeInfoDb_1.24.0        
+##  [11] ggplot2_3.3.1               digest_0.6.25              
+##  [13] foreach_1.5.0               htmltools_0.4.0            
+##  [15] fansi_0.4.1                 magrittr_1.5               
+##  [17] checkmate_2.0.0             cluster_2.1.0              
+##  [19] doParallel_1.0.15           limma_3.44.1               
+##  [21] matrixStats_0.56.0          stabledist_0.7-1           
+##  [23] prettyunits_1.1.1           jpeg_0.1-8.1               
+##  [25] colorspace_1.4-1            xfun_0.14                  
+##  [27] dplyr_1.0.0                 tcltk_4.0.1                
+##  [29] callr_3.4.3                 crayon_1.3.4               
+##  [31] RCurl_1.98-1.2              graph_1.66.0               
+##  [33] roxygen2_7.1.0              impute_1.62.0              
+##  [35] survival_3.1-12             iterators_1.0.12           
+##  [37] glue_1.4.1                  gtable_0.3.0               
+##  [39] zlibbioc_1.34.0             XVector_0.28.0             
+##  [41] DelayedArray_0.14.0         pkgbuild_1.0.8             
+##  [43] DEoptimR_1.0-8              abind_1.4-5                
+##  [45] scales_1.1.1                vsn_3.56.0                 
+##  [47] htmlTable_1.13.3            clue_0.3-57                
+##  [49] foreign_0.8-80              svDialogs_1.0.0            
+##  [51] preprocessCore_1.50.0       Formula_1.2-3              
+##  [53] htmlwidgets_1.5.1           timeSeries_3062.100        
+##  [55] RColorBrewer_1.1-2          acepack_1.4.1              
+##  [57] ellipsis_0.3.1              spatial_7.3-12             
+##  [59] pkgconfig_2.0.3             XML_3.99-0.3               
+##  [61] nnet_7.3-14                 tidyselect_1.1.0           
+##  [63] rlang_0.4.6                 munsell_0.5.0              
+##  [65] tools_4.0.1                 cli_2.0.2                  
+##  [67] generics_0.0.2              evaluate_0.14              
+##  [69] stringr_1.4.0               mzID_1.26.0                
+##  [71] processx_3.4.2              knitr_1.28                 
+##  [73] robustbase_0.93-6           purrr_0.3.4                
+##  [75] RANN_2.6.1                  ncdf4_1.17                 
+##  [77] RBGL_1.64.0                 xml2_1.3.2                 
+##  [79] compiler_4.0.1              rstudioapi_0.11            
+##  [81] png_0.1-7                   svGUI_1.0.0                
+##  [83] testthat_2.3.2              affyio_1.58.0              
+##  [85] MassSpecWavelet_1.54.0      tibble_3.0.1               
+##  [87] stringi_1.4.6               statip_0.2.3               
+##  [89] ps_1.3.3                    desc_1.2.0                 
+##  [91] modeest_2.4.0               lattice_0.20-41            
+##  [93] fBasics_3042.89.1           Matrix_1.2-18              
+##  [95] multtest_2.44.0             vctrs_0.3.1                
+##  [97] pillar_1.4.4                lifecycle_0.2.0            
+##  [99] BiocManager_1.30.10         MALDIquant_1.19.3          
+## [101] data.table_1.12.8           bitops_1.0-6               
+## [103] GenomicRanges_1.40.0        R6_2.4.1                   
+## [105] stable_1.1.4                latticeExtra_0.6-29        
+## [107] pcaMethods_1.80.0           affy_1.66.0                
+## [109] gridExtra_2.3               IRanges_2.22.2             
+## [111] codetools_0.2-16            MASS_7.3-51.6              
+## [113] gtools_3.8.2                assertthat_0.2.1           
+## [115] pkgload_1.1.0               SummarizedExperiment_1.18.1
+## [117] rprojroot_1.3-2             withr_2.2.0                
+## [119] GenomeInfoDbData_1.2.3      berryFunctions_1.19.1      
+## [121] grid_4.0.1                  rpart_4.1-15               
+## [123] timeDate_3043.102           tidyr_1.1.0                
+## [125] rmutil_1.1.5                base64enc_0.1-3
 ```
 
 ## _References_

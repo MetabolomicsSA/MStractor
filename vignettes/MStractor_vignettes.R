@@ -1,4 +1,18 @@
 ## ----install_pacakge, eval=FALSE----------------------------------------------
+#  library(remotes)
+#  
+#  Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
+#  
+#  remotes::install_github("MetabolomicsSA/MStractor")
+#  
+#  # Alternatively, Download the tar.gz package from
+#  # https://github.com/MetabolomicsSA/MStractor/releases
+#  # and run the following
+#  
+#  library(remotes)
+#  
+#  Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
+#  
 #  setRepositories(ind=1:2)
 #  
 #  remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz",
@@ -11,7 +25,7 @@ library(MStractor)
 
 ## ----define_project, eval=FALSE-----------------------------------------------
 #  Project()
-#  #Skip this step if using the dataset provided within the package
+#  #If using the dataset provided within the package, set the working directory only and skip the rest
 
 ## ----load_package_dataset, message=FALSE--------------------------------------
 path<-system.file("extdata",package = "MStractor")
@@ -31,8 +45,8 @@ MassSpecParam()
 #  
 
 ## ----eval=TRUE----------------------------------------------------------------
-
-ClassType<-c('Mix','Treatment1')## don't run if using the the provided dataset
+ClassType<-c('Mix','Treatment1')
+## don't run if using the the provided dataset
 DefineClassAttributes(ClassType)
 
 ## ----eval=TRUE----------------------------------------------------------------
@@ -110,9 +124,9 @@ CreateDM(xfilled,'maxo')
 xsetConvert(xfilled)
 sampnames(xset)<-spn
 
-## ----eval=TRUE----------------------------------------------------------------
-xsetConvert(xdata)
-sampnames(xset)<-spn
+## ----eval=FALSE---------------------------------------------------------------
+#  xsetConvert(xdata)
+#  sampnames(xset)<-spn
 
 ## ----eval=FALSE---------------------------------------------------------------
 #  getTICs(xcmsSet= xset, pngName= "./QC/TICs_raw.png", rt= "raw")
@@ -132,12 +146,14 @@ sampnames(xset)<-spn
 #  # 'corrected' indicates retention time aligned signals
 
 ## ----eval=TRUE----------------------------------------------------------------
+xset
 autoCamera(xset)
+
 
 ## ----eval=TRUE, warning=FALSE-------------------------------------------------
 FilterDM(PksAn, xset)
 
-#the second argument of the function below is either 'filled' (branch a) or "corrected' (branch b)
+#the second argument of the function below is either 'filled' (branch a) or 'corrected' (branch b)
 CollectBP_EICs(BasePks,'filled') 
 #after this step manual curation is necessary 
 BasePks_Curated(BasePks)
