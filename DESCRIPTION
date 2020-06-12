@@ -36,7 +36,8 @@ Imports:
  utils,
  tidyr,
  tools,
- vctrs
+ vctrs,
+ multtest
 Suggests:
     knitr,
     rmarkdown,
