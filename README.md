@@ -27,6 +27,9 @@ Alternatively, the package can be installed from the tar.gz file available under
 ### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 ##### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
 
+Instructions are provide in the package Vignettes, accessible running the following code:
+
+####browseVignettes(MStractor)
 
 ## Case study 
 A case study to test the script is available. 
