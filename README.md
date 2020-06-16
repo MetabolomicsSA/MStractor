@@ -29,7 +29,7 @@ Alternatively, the package can be installed from the tar.gz file available under
 
 Instructions are provided in the package Vignettes, accessible running the following code:
 
-####browseVignettes(MStractor)
+#### browseVignettes(MStractor)
 
 ## Case study 
 A case study to test the script is available. 
