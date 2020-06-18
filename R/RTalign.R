@@ -26,7 +26,7 @@ RTalign <- function(x, y) {
         gui = .GUI)$res
     assign("Span", Span, envir)
     Extra = dlgInput(message = "Enter number of extra peaks to allow in
-        retention time correction correction groups",
+        retention time correction  groups",
         default = "0", gui = .GUI)$res
     assign("Extra", Extra, envir)
 
