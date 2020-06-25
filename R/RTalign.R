@@ -19,13 +19,14 @@
 RTalign <- function(x, y) {
     ne <- 1
     envir = as.environment(ne)
-    Family = dlgInput(message = "Enter the family type (gaussian or symmetric)",
+    Family = dlgInput(message = "Enter the family type
+                    ('gaussian' or 'symmetric')",
         default = "gaussian", gui = .GUI)$res
     assign("Family", Family, envir)
-    Span = dlgInput(message = "Enter the span value", default = "0.6",
+    Span = dlgInput(message = "Enter the span value [Span]", default = "0.6",
         gui = .GUI)$res
     assign("Span", Span, envir)
-    Extra = dlgInput(message = "Enter number of extra peaks to allow in
+    Extra = dlgInput(message = "Enter number of extra peaks [Extra] to allow in
         retention time correction  groups",
         default = "0", gui = .GUI)$res
     assign("Extra", Extra, envir)

@@ -32,32 +32,28 @@
 autoCamera <- function(x) {
     ne <- 1
     envir = as.environment(ne)
-    sigmainput = dlgInput(message = "Enter sigma value",
+    sigmainput = dlgInput(message = "Enter sigma value [Sigma]",
                     default = 6, gui = .GUI)$res
     assign("Sigma", as.numeric(sigmainput), envir)
-
-    Pfwhm = dlgInput(message = "Enter the percentage of FWHM (perfwhm)",
+    Pfwhm = dlgInput(message = "Enter the percentage of FWHM [perfwhm]",
                     default = 1, gui = .GUI)$res
     assign("Perfwhm", as.numeric(Pfwhm), envir)
-
-    Ival = dlgInput(message = "Enter the desired intensity value",
+    Ival = dlgInput(message = "Enter the desired intensity value [Intval]",
                     default = "maxo",gui = .GUI)$res
     assign("Intval", Ival, envir)
-
-    mIso = dlgInput(message = "Enter maximum number of expected isotopes",
+    mIso = dlgInput(message = "Enter maximum number of expected
+                    isotopes [maxIso]",
         default = "4", gui = .GUI)$res
     assign("maxIso", as.numeric(mIso), envir)
 
     pperr = dlgInput(message = "Enter the general ppm error", default = 20.03,
         gui = .GUI)$res
     assign("ppmerror", as.numeric(pperr), envir)
-
     Corrthresh = dlgInput(message = "Enter the group correlation
-            threshold for EIC (cor_eic_th)",default = 0.7, gui = .GUI)$res
+            threshold for EIC [cor_eic_th]",default = 0.7, gui = .GUI)$res
     assign("corrthresh", as.numeric(Corrthresh), envir)
-
     Corrthreshacs = dlgInput(message = "Enter the intensity correlation
-            threshold across samples (cor_exp_th)",
+            threshold across samples [cor_exp_th]",
             default = 0.7, gui = .GUI)$res
     assign("corexpth", as.numeric(Corrthreshacs), envir)
     pValue = dlgInput(message = "Enter the p value threshold

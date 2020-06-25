@@ -30,10 +30,6 @@ MedianNormalize <- function(x,y) {
     SimpMatrix <- merge(AIN, BasePksCurSel, by = "row.names")
     SimpMatrix[, 1] <- NULL
 
-    write.table(SimpMatrix[with(SimpMatrix, order(rt, mz)), ],
-        file = paste("Simp_Curated","tsv", sep = "."), sep = "\t",
-        col.names = NA, row.names = TRUE)
-
     Median <- apply(BasePksCurSel, 2, FUN = median, na.rm = TRUE)
     norm <- sweep(BasePksCurSel, 2, Median, `/`)
     NormalizedMatrix <- merge(AIN, norm, by = "row.names")
