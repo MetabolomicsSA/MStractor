@@ -5,10 +5,10 @@
 \title{Prints overlaid TICs for xcmsSet Objects}
 \usage{
 getTICs(
-  xcmsSet = NULL,
-  files = NULL,
-  pngName = "TICs.png",
-  rt = c("raw", "corrected")
+    xcmsSet = NULL,
+    files = NULL,
+    pngName = "TICs.png",
+    rt = c("raw", "corrected")
 )
 }
 \arguments{
