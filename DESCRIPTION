@@ -2,18 +2,20 @@ Package: MStractor
 Type: Package
 Title: Workflow functions
 Version: 0.1.0
-Author@R: person(given = "Luca", family = "Nicolotti",
+Authors@R: person(given = "Luca", family = "Nicolotti",
     email = "luca.nicolotti@awri.com.au",
 	role =c("cre","aut"), comment=c(ORCID="0000-0002-5910-4010"))
-Author: Luca Nicolotti <luca.nicolotti@awri.com.au>, Jeremy Hack
-Maintainer: Luca Nicolotti <luca.nicolotti@awri.com.au>
-Description: This is a package containg functions to create a user-friendly xcms based workflow.
+Description: a R workflow developed to streamline pre-processing of metabolomics
+    mass spectrometry data. MStractor combines functions for molecular feature
+    extraction present in XCMS and CAMERA with user friendly dedicated GUIs.
+    It includes chromatographic and MS parameter input, graphical quality control 
+    outputs and descriptive statistics calculation.
 License: file LICENSE
 Encoding: UTF-8
 LazyData: FALSE
 Depends:
- R (>= 3.6.0),
- xcms (>= 3.8.1)
+ R (>= 4.0),
+ xcms (>= 3.10.1)
 Imports:
  berryFunctions,
  graphics,
