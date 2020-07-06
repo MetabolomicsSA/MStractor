@@ -541,7 +541,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="parameter-evaluation" class="section level2">
 <h2>2. <em>Parameter Evaluation</em></h2>
-<p>Thisis a QC step that allows testing the suitability of the input parameters on the reference files selected in the first step.</p>
+<p>This is a QC step that allows testing the suitability of the input parameters on the reference files selected in the first step.</p>
 <p>First, a GUI is used to define the settings of xcms functions findChromPeaks and groupChromPeaks which perform peak picking and grouping of molecular features. Secondly, data files are read using the xcms function readMSData and, lastly, peak picking and grouping is carried out. The output of the function is the XCMSnEXP object ‘x_refs’.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">#not to be executed if using the example  dataset</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="kw">exploreRefs</span>() </span></code></pre></div>
@@ -721,7 +721,7 @@ the data preparation step. The function performs the same steps described for ex
 <span id="cb36-3"><a href="#cb36-3"></a><span class="co">#the second argument of the function below is either &#39;filled&#39; (branch a) </span></span>
 <span id="cb36-4"><a href="#cb36-4"></a><span class="co">#or &#39;corrected&#39; (branch b)</span></span>
 <span id="cb36-5"><a href="#cb36-5"></a><span class="kw">CollectBP_EICs</span>(BasePks,<span class="st">&#39;filled&#39;</span>) </span></code></pre></div>
-<pre><code>## Time difference of 55.01033 mins</code></pre>
+<pre><code>## Time difference of 54.63897 mins</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co">#after this step manual curation is necessary </span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="kw">BasePks_Curated</span>(BasePks)</span>
 <span id="cb38-3"><a href="#cb38-3"></a><span class="kw">MedianNormalize</span>(BasePksCur, xset)</span></code></pre></div>
