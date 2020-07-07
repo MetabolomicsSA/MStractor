@@ -15,8 +15,8 @@
 #'     dir.create('./QC')
 #'     getTICs(xcmsSet= xset, pngName= "./QC/TICs_raw.png", rt= "raw")
 #' }
-getTICs <- function(xcmsSet = NULL, files = NULL, pngName = "TICs.png",
-    rt = c("raw","corrected")) {
+getTICs <- function( xcmsSet=NULL, files=NULL, pngName="TICs.png",
+    rt = c("raw", "corrected")) {
     if (is.null(xcmsSet)) {
         filepattern <- c("[Cc][Dd][Ff]", "[Nn][Cc]", "([Mm][Zz])?[Xx][Mm][Ll]",
             "[Mm][Zz][Dd][Aa][Tt][Aa]", "[Mm][Zz][Mm][Ll]")
