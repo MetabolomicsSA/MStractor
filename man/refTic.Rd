@@ -19,7 +19,7 @@ Prints a .png file showing the TIC of the reference files.
 The graphical output is stored in the QC folder.
 }
 \examples{
-{   ChromParam()
+{  ChromParam()
     MassSpecParam()
     PeakPickingParam()
     SampleGroup<-c("Mix", "Mix")

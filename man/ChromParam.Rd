@@ -19,8 +19,8 @@ ChromParam() allows the user to input the
     the later stages of the framework.
     The values to be entered are the retention time range
     of the data set (rt start and rt end), the maximum
-    retention time drift observed and the minimum
-    and maximum fullwidth at half maximun (FWHM min and max).
+    retention time drift observed and the
+    minimum and maximum fullwidth at half maximun (FWHM min and max).
 }
 \examples{
 {ChromParam()
