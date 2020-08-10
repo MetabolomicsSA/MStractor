@@ -14,7 +14,7 @@ MStractor shows some additional features such as:
 2. Graphical tools for real-time quality monitoring and optimization of the feature extraction process 
 ## Getting started 
 
-to install the package from GitHub, make sure the package 'remotes' is installed and run the  following
+to install the package from GitHub, make sure your Bioconductor installation is updated and the package 'remotes' is installed. Then run the  following
 
 #### library(remotes)
 #### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
