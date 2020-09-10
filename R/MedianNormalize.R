@@ -35,7 +35,7 @@ MedianNormalize <- function(x,y) {
     NormalizedMatrix <- merge(AIN, norm, by = "row.names")
     NormalizedMatrix[, 1] <- NULL
     rt<-as.numeric(format(round(NormalizedMatrix$rt,2),nsmall=2))
-    mz<-as.numeric(format(round(NormalizedMatrix$mz,2),nsmall=2))
+    mz<-as.numeric(format(round(NormalizedMatrix$mz,4),nsmall=4))
     NormalizedMatrix$rt<-rt
     NormalizedMatrix$mz<-mz
     assign("NormalizedMatrix", NormalizedMatrix, envir)
