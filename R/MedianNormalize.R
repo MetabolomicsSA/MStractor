@@ -26,20 +26,18 @@ MedianNormalize <- function(x,y) {
 
     sub1 <- colnames(BasePksCur)
     replicates <- which(sub1 %in% Files)
-    BasePksCurSel <- subset(BasePksCur, select = replicates)
+    BasePksCurSel <- BasePksCur[,replicates]
     SimpMatrix <- merge(AIN, BasePksCurSel, by = "row.names")
     SimpMatrix[, 1] <- NULL
 
-    Median <- apply(BasePksCurSel, 2, FUN = median, na.rm = TRUE)
-    norm <- sweep(BasePksCurSel, 2, Median, `/`)
+    Median <- apply(BasePksCurSel[,1:ncol(BasePksCurSel)], 2, FUN = median, na.rm = TRUE)
+    norm <- sweep(BasePksCurSel[,1:ncol(BasePksCurSel)], 2, Median, `/`)
     NormalizedMatrix <- merge(AIN, norm, by = "row.names")
     NormalizedMatrix[, 1] <- NULL
-    t <- format(round(NormalizedMatrix[, 2:ncol(NormalizedMatrix)], 4),
-        nsmall = 4)
-    t<-data.matrix(t)
-    NormalizedMatrix[, 2:ncol(NormalizedMatrix)] <- t
-    NormalizedMatrix[, 3] <- as.numeric(NormalizedMatrix[, 3])
-    NormalizedMatrix[, 2] <- as.numeric(NormalizedMatrix[, 2])
+    rt<-as.numeric(format(round(NormalizedMatrix$rt,2),nsmall=2))
+    mz<-as.numeric(format(round(NormalizedMatrix$mz,2),nsmall=2))
+    NormalizedMatrix$rt<-rt
+    NormalizedMatrix$mz<-mz
     assign("NormalizedMatrix", NormalizedMatrix, envir)
     write.table(NormalizedMatrix[with(NormalizedMatrix, order(rt, mz)), ],
         file = paste("NormalizedMatrix", "tsv", sep = "."), sep = "\t",
