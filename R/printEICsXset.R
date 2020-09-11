@@ -27,7 +27,7 @@ printEICsXset <- function(x, y) {
     dir.create(eg)
     do.call(file.remove, list(list.files("eg", full.names = TRUE)))
     graphics.off()
-    png(file.path(paste(eg, "%003d.png", sep = "")), height = 768,
+    png(file.path(paste(eg, "%001d.png", sep = "")), height = 768,
         width = 1024)
     plot(eics, x)
 
