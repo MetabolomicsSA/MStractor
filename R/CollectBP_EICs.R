@@ -3,10 +3,10 @@
 #'     features and stores them in a folder
 #' @param  x is the subset data matrix ('BasePks') created via the FilterDM
 #'     function
-#' @param  y is a character vector ( 'corrected' for branch b and
-#'     'filled' for branch a)
+#' @param  y is a character vector ( 'corrected' for workflow branch 'b' and
+#'     'filled' for workflow  branch 'a')
 #' @export
-#' @details CollectBP_EICs() prints the extracted ion chromatograms related to
+#' @details CollectBP_EICs() prints the extracted ion chromatograms from
 #'     the base peak matrix in a .png format.The pngs files are duplicated into
 #'     2 directories,named EICs_BasePeaks and EICs_BasePeaks_Curated.
 #'     The former is used as data back-up, while the latter allows the user
@@ -35,7 +35,7 @@
 #'     }
 CollectBP_EICs <- function(x,y) {
 
-    BP_EICs <- paste(sprintf("%03d", as.numeric(rownames(x))),
+    BP_EICs <- paste(as.numeric(rownames(x)),
         "png", sep = ".")
 
     dir.create("./EICs_BasePeaks/")
