@@ -1,7 +1,7 @@
 #' @title Spectra reconstruction using  CAMERA
 #' @description uses CAMERA functions to process data. A GUI is used to enter
 #'     CAMERA parameters
-#' @param  x is a xcms Filled object
+#' @param  x is a xcms Filled object (xset for branch A and xs Filled for B)
 #' @export
 #' @details Spectra reconstruction is done using the function autoCAMERA()
 #'     that includes the 3 CAMERA functions groupFWHM(), findIsotopes() and
