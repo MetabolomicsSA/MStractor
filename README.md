@@ -35,9 +35,9 @@ if installing from binaries (rtools not required)
 
 Alternatively, the package can be installed from the tar.gz file available under "releases"
 
-##### setRepositories(ind=1:2)
-##### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
-##### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
+#### setRepositories(ind=1:2)
+#### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
+#### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
 
 Instructions are provided in the package Vignettes, accessible running the following code:
 
