@@ -21,9 +21,9 @@ to install the package from GitHub, make sure your Bioconductor installation is 
 #### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 
 
-if installing from source (rtools required)#### remotes::install_github("MetabolomicsSA/MStractor", type='source') 
+#### remotes::install_github("MetabolomicsSA/MStractor", type='source')  if installing from source (rtools required) 
 
-if installing from binaries (rtools not required)#### remotes::install_github("MetabolomicsSA/MStractor", type='binaries') 
+#### remotes::install_github("MetabolomicsSA/MStractor", type='binaries') if installing from binaries (rtools not required) 
 
 
 It is reccomende to install xcms from source.
