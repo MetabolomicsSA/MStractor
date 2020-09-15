@@ -14,13 +14,13 @@ MStractor shows some additional features such as:
 2. Graphical tools for real-time quality monitoring and optimization of the feature extraction process 
 ## Getting started 
 
-to install the package from GitHub, make sure your Bioconductor installation is updated (by running BiocManager::install()) and the packages
-'devtools' and 'remotes' is installed. Then run the  following
+to install the package from GitHub, make sure your Bioconductor installation is updated (by running BiocManager::install()) and the package
+ 'remotes' is installed. Then run the  following
 
 #### library(remotes)
 #### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
-#### remotes::install_github("MetabolomicsSA/MStractor", type='source')
-
+#### remotes::install_github("MetabolomicsSA/MStractor", type='source') # if instaling from source (rtools required)
+#### remotes::install_github("MetabolomicsSA/MStractor", type='source') # if installing from binaries (rtools not required)
 
 Alternatively, the package can be installed from the tar.gz file available under "releases"
 
