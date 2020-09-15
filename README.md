@@ -20,11 +20,13 @@ to install the package from GitHub, make sure your Bioconductor installation is 
 #### library(remotes)
 #### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 <br/>
+
 *if installing from source (rtools required)
 
 #### remotes::install_github("MetabolomicsSA/MStractor", type='source')  
 <br/> 
 <br/>
+
 *if installing from binaries (rtools not required)
 
 #### remotes::install_github("MetabolomicsSA/MStractor", type='binaries')  
