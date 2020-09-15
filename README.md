@@ -21,7 +21,7 @@ to install the package from GitHub, make sure your Bioconductor installation is 
 #### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 <br/>
 
-if installing from source (rtools required)
+if installing from source (recommended, rtools required)
 
 #### remotes::install_github("MetabolomicsSA/MStractor", type='source')  
 <br/> 
@@ -36,7 +36,7 @@ It is reccomende to install xcms from source.
 Alternatively, the package can be installed from the tar.gz file available under "releases"
 
 ##### setRepositories(ind=1:2)
-#### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
+##### Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS="true")
 ##### remotes::install_local("C:/pathtoPackage/MStractor_0.1.0.tar.gz", dependencies=NA)
 
 Instructions are provided in the package Vignettes, accessible running the following code:
