@@ -32,7 +32,7 @@ if installing from binaries (rtools not required)
 #### remotes::install_github("MetabolomicsSA/MStractor", type='binaries')  
 <br/>
 
-It is reccomende to install xcms from source.
+
 Alternatively, the package can be installed from the tar.gz file available under "releases"
 
 ##### setRepositories(ind=1:2)
