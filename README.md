@@ -13,8 +13,8 @@ MStractor shows some additional features such as:
 1. Parameterization based on user provided inputs obtained from instrument specifications and reference measurements. 
 2. Graphical tools for real-time quality monitoring and optimization of the feature extraction process 
 ## Getting started 
-
-to install the package from GitHub, make sure your Bioconductor installation is updated (by running BiocManager::install()) and the package
+It is recommended to install teh dependedcy xcms from source.
+To install the package from GitHub, make sure your Bioconductor installation is updated (by running BiocManager::install()) and the package
  'remotes' is installed. Then run the  following
 
 #### library(remotes)
