@@ -1,4 +1,4 @@
-# MStractor 
+# MStractor 2020
 Please note that this version of the script has been tested  using Bioconductor version 3.12 and R version 4.0.2
 
 MStractor is an R workflow package for non-targeted processing of LC-MS data 
