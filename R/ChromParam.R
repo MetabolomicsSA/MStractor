@@ -42,6 +42,7 @@ ChromParam <- function() {
     assign("FWHMmin", as.numeric(fwhmmin), envir)
     assign("FWHMmax", as.numeric(fwhmmax), envir)
     assign("rtDelta", as.numeric(rtdev), envir)
-    inputparam <- list(rtStart, rtEnd, FWHMmin, FWHMmax, rtDelta)
+    inputparam <- data.frame(rtStart, rtEnd, FWHMmin, FWHMmax, rtDelta)
+    write.csv(inputparam, "Chromparam.csv")
     return(inputparam)
 }
