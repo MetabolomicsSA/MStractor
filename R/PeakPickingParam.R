@@ -67,8 +67,8 @@ PeakPickingParam <- function() {
     assign("mzErrPpmMean", mzErrPpmMean, envir)
     mzdifference <- mzErrAbs/5
     assign("mzdifference", mzdifference, envir)
-    pPparam <- data.frame(as.numeric(pwmin), as.numeric(pwmax), mzErrPpmMin,
-        mzErrPpmMax,mzErrPpmMean, mzdifference, fitGauss, as.numeric(integ), snThresh)
+    pPparam <- data.frame(pwmin, pwmax, mzErrPpmMin,
+        mzErrPpmMax,mzErrPpmMean, mzdifference, fitGauss, integ, snThresh)
     write.csv(pPparam, "peakPickParam.csv")
     return(pPparam)
 }
