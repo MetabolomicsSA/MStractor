@@ -38,7 +38,8 @@ MassSpecParam <- function() {
     assign("EICsMax", as.numeric(eicssmax), envir)
     assign("sens", as.numeric(sensmin), envir)
     assign("filetype", filetype, envir)
-    msparam <- list(mzPol, mzStart, mzEnd, mzErrAbs, mzMax, EICsMax, sens,
+    msparam <- data.frame(mzPol, mzStart, mzEnd, mzErrAbs, mzMax, EICsMax, sens,
         filetype)
+    write.csv(msparam, "MassSpecParam.csv")
     return(msparam)
 }
