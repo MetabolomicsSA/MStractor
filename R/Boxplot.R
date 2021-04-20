@@ -3,8 +3,7 @@
 #'              present in the data frame arraging them by sample class.
 #' @param x is a data frame containing data  and descriptive stats fore each
 #'        class. It can be pre or post Tms and blank filtering.
-#'        Accepted dataframes are : "corrected_dfTMS", "corrected_dfBlank",
-#'        "correctedTMSandBlank", "postprocessingCuration".
+#'        The data frame structure has to be teh same of the "NormalizedMatrix" object.
 #'        y is a "bpSelection" object", i.e. a charter vector containing the sample classes
 #' @description Define and subtract features above a given cv.
 #' @details The user defines the classes to be taken into account for CV filtering.If a feature has
