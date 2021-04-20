@@ -5,6 +5,9 @@
 #'        class. It can be pre or post Tms and blank filtering.
 #'        The data frame structure has to be teh same of the "NormalizedMatrix" object.
 #'        y is a "bpSelection" object", i.e. a charter vector containing the sample classes
+#'        z is a character vector of length defining the type of algorithm to be used, either "exclusive",
+#'        "inclusive" or "linear". for more info
+#'        https://plotly.com/r/box-plots/#choosing-the-algorithm-for-computing-quartiles
 #' @description Define and subtract features above a given cv.
 #' @details The user defines the classes to be taken into account for CV filtering.If a feature has
 #'          a CV value above 25% in all the classes considered, the feature is removed from the data matrix.
@@ -52,7 +55,7 @@ Boxplot <- function(x,y){
         for(i in seq_along(boxLsDm)){
              fig<-plot_ly(type= "box")
              for(j in seq_along(boxLsDm[[1]])){
-                 fig<-add_trace(fig, y=boxLsDm[[i]][[j]], quartilemethod="exclusive", name=y[[j]])
+                 fig<-add_trace(fig, y=boxLsDm[[i]][[j]], quartilemethod=z, name=y[[j]])
                  boxPlots[[i]]<-fig
              }
         }
