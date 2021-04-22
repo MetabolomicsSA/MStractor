@@ -18,9 +18,9 @@
 Project <- function() {
     ne <- 1
     envir = as.environment(ne)
-    pathtoproject = tk_choose.dir(default = "", caption = "Select working
+    pathtoproject = choose.dir(default = "", caption = "Select working
         directory")
-    qcReps <- tk_choose.files(default = "", caption = "Select  QC replicates
+    qcReps <- choose.files(default = "", caption = "Select  QC replicates
         (minimum of 2)",multi = TRUE)
     cpus <- "max"
     assign("pathToProject", pathtoproject, envir)
