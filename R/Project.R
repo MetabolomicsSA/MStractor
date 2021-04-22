@@ -20,13 +20,6 @@ Project <- function() {
     envir = as.environment(ne)
     pathtoproject = choose.dir(default = "", caption = "Select working
         directory")
-    qcReps <- choose.files(default = "", caption = "Select  QC replicates
-        (minimum of 2)",multi = TRUE)
-    cpus <- "max"
-    assign("pathToProject", pathtoproject, envir)
-    assign("CPUs", cpus, envir)
-    assign("QCReps", qcReps, envir)
-    ws <- list(pathToProject, qcReps)
     # Set the projects working directory
     if (is.na('pathToProject')) {
         return(cat("Working directory not found"))
@@ -34,6 +27,16 @@ Project <- function() {
         setwd(pathToProject)
         dir.create("./QC")
         cat("Working directory set to:\n", getwd())
-        return(ws)
+
     }
+
+    qcReps <- choose.files(default = paste0(getwd(), "/*.*"), caption = "Select  QC replicates
+        (minimum of 2)",multi = TRUE)
+    cpus <- "max"
+    assign("pathToProject", pathtoproject, envir)
+    assign("CPUs", cpus, envir)
+    assign("QCReps", qcReps, envir)
+    ws <- list(pathToProject, qcReps)
+    return(ws)
 }
+
