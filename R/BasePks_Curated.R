@@ -34,7 +34,7 @@ BasePks_Curated <- function(x) {
     pks <- basename(file_path_sans_ext(dir("./EICs_BasePeaks_Curated/")))
 
 
-    BasePksCur <- x[sprintf("%03d", as.numeric(rownames(x))) %in% pks, ]
+    BasePksCur <- x[sprintf("%01d", as.numeric(rownames(x))) %in% pks, ]
     write.table(BasePksCur[with(BasePksCur, order(rt, mz)), ],
                 file = paste("PksBPsCurated",
                 "tsv", sep = "."), sep = "\t", col.names = NA,
