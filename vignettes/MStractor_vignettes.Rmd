@@ -605,9 +605,18 @@ MedianNormalize(BasePksCur, xset)
 
 **Figure 8: Curation example **
 
-## 10. _Box plots_
+## 10. _Descriptive Statistics and Box plots_
 
-Step 10 performs an immediate comparison among the different sample classes. This is achieved by plotting box plots for each feature contained in the Normalised Matrix generated in the previous step of the workflow. The function bpSel() allows selecting the sample classes to be compared, while  Boxplot()generates interactive views saved in html files  within the QC directory. 
+Step 10 allows calculating  descriptive statistics 
+(average value, standard deviation and % CV) on the analytical replicates 
+of each sample class. The output is stored in separate .tsv file
+for each class.
+
+```{r eval=TRUE}
+StatsByClass(ClassType, xset)
+```
+
+After this, it is possible toperform an immediate comparison among the different sample classes. This is achieved by plotting box plots for each feature contained in the Normalised Matrix generated in the previous step of the workflow. The function bpSel() allows selecting the sample classes to be compared, while  Boxplot()generates interactive views saved in html files  within the QC directory. 
 Additonal details can be found here:
 https://plotly.com/r/box-plots/#choosing-the-algorithm-for-computing-quartiles
 
@@ -616,16 +625,6 @@ bpSel()
 Boxplot(NormalizedMatrix,bpSelection, "linear")
 ```
 
-## 11. _Descriptive Statistics_
-
-An additional step of the workflow allows calculating  descriptive statistics 
-(average value, standard deviation and % CV) on the analytical replicates 
-of each sample class. The output is stored in separate .tsv file
-for each class.
-
-```{r eval=TRUE}
-StatsByClass(ClassType, xset)
-```
 
 ## _Session information_
 
