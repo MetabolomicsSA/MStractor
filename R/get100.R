@@ -35,9 +35,9 @@ get100 <- function(x) {
     tbp = round(seq(from = 1, to = nrow(tmp), by = (nrow(tmp)/100)))
     printreference <- function(x) {
         graphics.off()
-        png(filename = paste("./QC/EICs_", type, ".png", sep = ""),
-            height = 1024,width = 1024)
-        par(mar = c(0.6, 0.6, 0.6, 0.6))
+        pdf(paste("./QC/EICs_", type, ".pdf", sep = ""),
+            height = 156,width = 156)
+        par(mar = c(1.5, 1.5, 1.5, 1.5))
         par(mfrow = c(10, 10))
         for (i in seq_along(tbp)) {
             plot(tmp[tbp[i]], col = "red", peakType = "none")
