@@ -37,7 +37,7 @@ get100 <- function(x) {
         graphics.off()
         png(filename = paste("./QC/EICs_", type, ".png", sep = ""),
             height = 1024,width = 1024)
-        par(mar = c(1, 1, 1, 1))
+        par(mar = c(0.6, 0.6, 0.6, 0.6))
         par(mfrow = c(10, 10))
         for (i in seq_along(tbp)) {
             plot(tmp[tbp[i]], col = "red", peakType = "none")
