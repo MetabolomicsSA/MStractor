@@ -43,6 +43,9 @@ peakPickGroup <- function() {
         identified in a single mz slice [Mfeat]",default = 50, gui = .GUI)$res
     assign("MFeat", as.numeric(MF), envir)
 
+    minSam = dlgInput(message = "minimum number od samples fora group to
+                      be valid [minSam]",default = 2, gui = .GUI)$res
+    assign("minSam", as.numeric(minSam), envir)
 
     pd <- data.frame(sample_name = sub(basename(rawfiles), pattern = filetype,
         replacement = "", fixed = TRUE), sample_group = SampleGroup,
@@ -53,12 +56,13 @@ peakPickGroup <- function() {
         prefilter = c(3, intThresh), integrate = integ, fitgauss = FALSE,
         noise = 0, verboseColumns = FALSE, firstBaselineCheck = TRUE,
         ppm = mzErrPpmMin,
-        mzCenterFun = "wMean")
+        mzCenterFun = "wMean", mzdiff=mzdifference)
     xdata <- findChromPeaks(raw_data, param = cwp)
     minfrac <- (min(classSize))/length(rawfiles)
     assign("minfrac", minfrac, envir)
-    pdp <- PeakDensityParam(sampleGroups = xdata$sample_group, minSamples = 2,
-        maxFeatures = MFeat, bw = defbw, minFraction = 0.3, binSize = Binsize)
+
+    pdp <- PeakDensityParam(sampleGroups = xdata$sample_group, minSamples = minSam,
+        maxFeatures = MFeat, bw = defbw, minFraction = minfrac, binSize = Binsize)
     xdata <- groupChromPeaks(xdata, param = pdp)
 
     assign("xdata", xdata, envir)
