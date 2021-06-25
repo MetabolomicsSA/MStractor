@@ -40,6 +40,7 @@ Imports:
  tidyr,
  tools,
  tcltk,
+ tcltk2,
  vctrs,
  multtest
 Suggests:
