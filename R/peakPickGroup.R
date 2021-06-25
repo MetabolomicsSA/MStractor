@@ -45,7 +45,7 @@ peakPickGroup <- function() {
 
     minSam = dlgInput(message = "minimum number od samples fora group to
                       be valid [minSam]",default = 2, gui = .GUI)$res
-    assign("minSam", as.numeric(minSam), envir)
+    assign("minSamp", as.numeric(minSam), envir)
 
     pd <- data.frame(sample_name = sub(basename(rawfiles), pattern = filetype,
         replacement = "", fixed = TRUE), sample_group = SampleGroup,
@@ -61,7 +61,7 @@ peakPickGroup <- function() {
     minfrac <- (min(classSize))/length(rawfiles)
     assign("minfrac", minfrac, envir)
 
-    pdp <- PeakDensityParam(sampleGroups = xdata$sample_group, minSamples = minSam,
+    pdp <- PeakDensityParam(sampleGroups = xdata$sample_group, minSamples = minSamp,
         maxFeatures = MFeat, bw = defbw, minFraction = minfrac, binSize = Binsize)
     xdata <- groupChromPeaks(xdata, param = pdp)
 
