@@ -35,7 +35,7 @@ exploreRefs <- function() {
     assign("defbw", as.numeric(dbw), envir)
 
     BSize = dlgInput(message = "Enter  the size of the overlapping slices
-            in mz dimension",default = 0.1, gui = .GUI)$res
+            in mz dimension[Binsize]",default = 0.1, gui = .GUI)$res
     assign("Binsize", as.numeric(BSize), envir)
 
     MF = dlgInput(message = "set the maximum number of peak groups to be
