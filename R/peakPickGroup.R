@@ -61,7 +61,7 @@ peakPickGroup <- function() {
     minfrac <- (min(classSize))/length(rawfiles)
     assign("minfrac", minfrac, envir)
 
-    pdp <- PeakDensityParam(sampleGroups = xdata$sample_group, minSamples = minSamp,
+    pdp <- PeakDensityParam(sampleGroups = xdata$sample_group, minSamples =minSamp,
         maxFeatures = MFeat, bw = defbw, minFraction = minfrac, binSize = Binsize)
     xdata <- groupChromPeaks(xdata, param = pdp)
 

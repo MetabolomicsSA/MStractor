@@ -3,7 +3,8 @@
 #'              present in the data frame arraging them by sample class.
 #' @param x is a data frame containing data  and descriptive stats fore each
 #'        class. It can be pre or post Tms and blank filtering.
-#'        The data frame structure has to be teh same of the "NormalizedMatrix" object.
+#'        Accepted dataframes are : "corrected_dfTMS", "corrected_dfBlank",
+#'        "correctedTMSandBlank", "postprocessingCuration".
 #'        y is a "bpSelection" object", i.e. a charter vector containing the sample classes
 #'        z is a character vector of length defining the type of algorithm to be used, either "exclusive",
 #'        "inclusive" or "linear". for more info
@@ -13,7 +14,9 @@
 #'          a CV value above 25% in all the classes considered, the feature is removed from the data matrix.
 #' @export
 #' @return boxplots
-Boxplot <- function(x,y){
+Boxplot <- function(x,y,z){
+    ne <- 1
+    envir = as.environment(ne)
     col<-colnames(x)
     featurelabels<-as.numeric(x[,1])
     sg<-unique(y)
@@ -49,19 +52,37 @@ Boxplot <- function(x,y){
             fbc[[i]]<-fby
             boxLsDm[[j]]<-fbc
             }
+            assign("boxLsDm", boxLsDm, envir)
           }
-
     boxPlots<-list()
         for(i in seq_along(boxLsDm)){
              fig<-plot_ly(type= "box")
              for(j in seq_along(boxLsDm[[1]])){
-                 fig<-add_trace(fig, y=boxLsDm[[i]][[j]], quartilemethod=z, name=y[[j]])
-                 boxPlots[[i]]<-fig
-             }
+                 fig<-add_trace(fig, y=boxLsDm[[i]][[j]], quartilemethod= z, name=paste(y[[j]],"_Feat_",x$id[[i]],sep=""),showlegend=FALSE)
+                 }
+             boxPlots[[i]]<-fig
+             assign("boxPlots", boxPlots, envir)
         }
     dir.create("./QC/Boxplots")
         for(i in seq_along(boxPlots)){
           htmlwidgets::saveWidget(boxPlots[[i]],  file= paste('./QC/Boxplots/','Feature',featurelabels[i],'boxplot.html',sep=""))
-            }
+        }
+
+    collatedplots<-list()
+    fraction<-split(boxPlots,ceiling(seq_along(boxPlots) / 25))
+    nplots<-seq_along(fraction)
+    for (i in seq_along(fraction[-1])){
+        cplots<-subplot(fraction[[i]], nrows = 5, shareX = FALSE, titleX = FALSE, heights= c(.2,.2,.2,.2,.2), widths=c(.2,.2, .2,.2,.2))
+        collatedplots[[i]]<-cplots
+        htmlwidgets::saveWidget(collatedplots[[i]],  file= paste('./QC/Boxplots/','collated_boxplot', nplots[i],'.html',sep=""))
+    }
+    lastplot<-tail(fraction, n=1)
+    nrows = (length (lastplot)*2)
+    hg<-rep(0.2,nrows)
+    wd<-rep(0.2,nrows)
+    for (i in seq_along(lastplot)){
+        lplots<-subplot(lastplot[[i]], nrows = (length (lastplot)*2), shareX = FALSE, titleX = FALSE, heights= hg, widths=wd)
+    htmlwidgets::saveWidget(lplots,  file= paste('./QC/Boxplots/','collated_boxplot', length(fraction),'.html',sep=""))
+}
 }
 

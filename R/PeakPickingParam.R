@@ -30,7 +30,7 @@ PeakPickingParam <- function() {
     pwmax <- dlgInput(message = "Enter a value for maximum peakwidth in
         seconds [pwMax]",default = 20, gui = .GUI)$res
     assign("pwMax", as.numeric(pwmax), envir)
-    mzdifference <- dlgInput(message = "minimum difference in m/z for peaks with overlapping retention times", default = 0.01, gui = .GUI)$res
+    mzdifference <- dlgInput(message = "minimum difference in m/z for peaks with overlapping retention times [mzdiff]", default = 0.01, gui = .GUI)$res
     assign("mzdifference", as.numeric(mzdifference), envir)
     mzEPMin <- dlgInput(message = "Enter a value for the minimum mz error in
         ppm [mzErrPpmMin]",default = "none", gui = .GUI)$res
@@ -67,7 +67,7 @@ PeakPickingParam <- function() {
     assign("snThresh", snThresh, envir)
     mzErrPpmMean <- mean(c(mzErrPpmMin, mzErrPpmMax))
     assign("mzErrPpmMean", mzErrPpmMean, envir)
-    assign("mzdifference", mzdifference, envir)
+    assign("mzdifference", as.numeric(mzdifference), envir)
     pPparam <- data.frame(pwmin, pwmax, mzErrPpmMin,
         mzErrPpmMax,mzErrPpmMean, mzdifference, fitGauss, integ, snThresh)
     write.csv(pPparam, "peakPickParam.csv")

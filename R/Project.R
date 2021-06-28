@@ -20,6 +20,7 @@ Project <- function() {
     envir = as.environment(ne)
     pathtoproject = choose.dir(default = "", caption = "Select working
         directory")
+    assign("pathToProject", pathtoproject, envir)
     # Set the projects working directory
     if (is.na('pathToProject')) {
         return(cat("Working directory not found"))
@@ -39,4 +40,3 @@ Project <- function() {
     ws <- list(pathToProject, qcReps)
     return(ws)
 }
-
