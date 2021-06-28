@@ -40,14 +40,13 @@ Imports:
  tidyr,
  tools,
  tcltk,
- tcltk2,
  vctrs,
  multtest
 Suggests:
     knitr,
     rmarkdown,
     testthat (>= 2.1.0)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 BugReports: https://github.com/MetabolomicsSA/MStractor/issues
 biocViews: Workflow, BasicWorkflow
