@@ -33,6 +33,7 @@ Imports:
  modeest,
  plyr,
  RANN,
+ rlang,
  sm,
  snow,
  stats,
