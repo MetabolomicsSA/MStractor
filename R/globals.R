@@ -11,4 +11,6 @@ utils::globalVariables(c("BasePks", "BasePksCur",
     "xset", "minfrac", "dbw", "BSize", "MF", "xdata", "Sigma", "defbw",
     "Binsize","integ", "Defbw", "BinSize", "Intval", "Perfwhm",
     "corrthresh", "maxIso","ppmerror", "pvalue", "corexpth", "runtimeEnd",
-    "runtimeStart", "runtime",'rawDataSet','xdata',"xSetRef", "bpSelection",'boxLsDm', "boxPlots" ))
+    "runtimeStart", "runtime",'rawDataSet','xdata',"xSetRef", "bpSelection",
+    'boxLsDm', "boxPlots",'xs_an',"spF","eS","eS2","RefFeatScan","Spectralist",
+    "spectrafile","spectraRaw","curSpectraScan","RefFeat","Numpeaks"))

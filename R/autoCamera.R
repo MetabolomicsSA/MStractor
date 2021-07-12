@@ -69,6 +69,7 @@ autoCamera <- function(x) {
     xs_an <- groupCorr(xs_an, cor_eic_th = corrthresh,
                 pval = pvalue, graphMethod = "hcs",calcIso = TRUE,
                 calcCiS = TRUE, calcCaS = TRUE, cor_exp_th = corexpth)
+    assign("xs_an", xs_an, envir)
     PksAn <- getPeaklist(xs_an, intval = "maxo")
     write.table(PksAn, file = paste("./QC/Pks_An", "tsv", sep = "."),
                 sep = "\t",col.names = NA, row.names = TRUE)
