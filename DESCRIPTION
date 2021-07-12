@@ -27,6 +27,7 @@ Imports:
  grDevices,
  parallel,
  htmltools,
+ heatmaply,
  plotly,
  MSnbase,
  modeest,
