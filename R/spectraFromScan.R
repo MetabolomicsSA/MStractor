@@ -38,7 +38,7 @@ spectraFromScan <- function(x) {
     spectralist[[i]][is.na(spectralist[[i]])]<-0
   }
   eS<-which(lapply(spectralist, function(y) {nrow(y) == 0})==TRUE)
-  eS2<-which(lapply(RefFeatScan, function(z) {is_empty(z)})==TRUE)
+  eS2<-which(lapply(RefFeat, function(z) {is_empty(z)})==TRUE)
   assign("eS", eS, envir)
   assign("eS2", eS2, envir)
   if(length(eS)==0){
