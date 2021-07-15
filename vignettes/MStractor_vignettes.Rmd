@@ -3,11 +3,11 @@ title: "MStractor Workflow"
 author: "Luca Nicolotti, The Australian Wine Research Institute, Metabolomics Australia"
 date: "20/04/2021"
 output:
+  html_document:
+    df_print: paged
   pdf_document:
     highlight: null
     number_sections: no
-  html_document:
-    df_print: paged
 vignette: |
   %\VignetteIndexEntry{MStractor Workflow} %\VignetteEncoding{UTF-8} %\VignetteEngine{knitr::rmarkdown}
 ---
@@ -623,6 +623,17 @@ https://plotly.com/r/box-plots/#choosing-the-algorithm-for-computing-quartiles
 ```{r boxplots, eval=FALSE}
 bpSel()
 Boxplot(NormalizedMatrix,bpSelection, "linear")
+```
+
+## 11. _Spectra reconstruction_
+
+Step 11 extract raw spectra corresponding to the features present in the curated data matrix.StoreRefFeat() and spectraFromScan() allow to coose the reference file for spectra extraction. nistEntryFromScan and createSearchList create msp files respectively storing single and multiple library entries.
+
+```{r eval=FALSE}
+storeRefFeat()
+spectraFromScan(RefFeat)
+nistEntryFromScan(spectralist, RefFeatScan)
+createSearchList("spectralist")
 ```
 
 
