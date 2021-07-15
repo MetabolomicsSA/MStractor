@@ -625,7 +625,7 @@ bpSel()
 Boxplot(NormalizedMatrix,bpSelection, "linear")
 ```
 
-## 11. _Spectra reconstruction_
+## 11. _Spectra Extraction_
 
 Step 11 extract raw spectra corresponding to the features present in the curated data matrix.StoreRefFeat() and spectraFromScan() allow to coose the reference file for spectra extraction. nistEntryFromScan and createSearchList create msp files respectively storing single and multiple library entries.
 
